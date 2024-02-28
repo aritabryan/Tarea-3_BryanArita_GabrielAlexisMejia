@@ -15,6 +15,29 @@ public class Tarea3Repaso {
  static Scanner duki = new Scanner(System.in);
     static Random rndm = new Random();
 
+
+    public static boolean contieneLetras(String corta, String larga) {
+        for (int i = 0; i < corta.length(); i++) {
+            char c = corta.charAt(i);
+            if (larga.indexOf(c) == -1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void LetrasyNumeros(String cadena) {
+        String orden = "";
+        for (char ca = 'a'; ca <= 'z'; ca++) {
+            for (int i = 0; i < cadena.length(); i++) {
+                if (cadena.charAt(i)==ca){
+                    orden+=ca;
+                }
+            }
+        }
+    System.out.println (orden);
+}
+ 
     public static void main(String[] args) {
 
         System.out.println("***MENU***\n[1]Veamos si podemos formar la palabra\n[2]Números primero\n[3]Ordenar alfabéticamente\n[4]Codificar cadenas\n[5]Jugando con arreglos\n[6]Salir");
@@ -23,10 +46,33 @@ public class Tarea3Repaso {
         while (opcion != 6) {
             switch (opcion) {
                 case 1:
+                    xchar resp = 's';
+                    while (resp == 's' || resp == 'S') {
+                        duki.nextLine();
+                        String mayor = "";
+                        String menor = "";
+                        System.out.print("Ingrese la primera cadena: ");
+                        String cad1 = duki.nextLine();
+                        System.out.print("Ingrese la segunda cadena: ");
+                        String cad2 = duki.nextLine();
 
+                        if (cad1.length() > cad2.length()) {
+                            mayor = cad1;
+                            menor = cad2;
+                        } else {
+                            mayor = cad2;
+                            menor = cad1;
+                        }
+                        if (contieneLetras(menor, mayor)) {
+                            System.out.println("Si se puede armar " + menor);
+                        } else {
+                            System.out.println("No se puede armar " + menor);
+                        }x
+x
+                        resp = duki.next().charAt(0);
+                    }
                     break;
                 case 2:
-
                     System.out.println("Ingrese una cadena que contenga letras y palabras:");
                     duki.nextLine();
                     String cadena = duki.nextLine();
@@ -35,7 +81,15 @@ public class Tarea3Repaso {
 
                     break;
                 case 3:
-
+                    char resp2 = 's';
+                    while (resp2 == 's' || resp2 == 'S') {
+                        duki.nextLine();
+                        System.out.println("Ingrese cadena: ");
+                        String cadena = duki.nextLine().toLowerCase();
+                        LetrasyNumeros(cadena);
+                        System.out.println("Desea continuar[S/N]?");
+                        resp2 = duki.next().charAt(0);
+                    }
                     break;
                 case 4:
                     System.out.println("Ingrese una cadena para codificar: ");
