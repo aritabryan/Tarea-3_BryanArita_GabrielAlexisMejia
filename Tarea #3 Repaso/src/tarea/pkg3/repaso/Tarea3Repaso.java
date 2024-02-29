@@ -65,7 +65,7 @@ public class Tarea3Repaso {
                         } else {
                             System.out.println("No se puede armar " + menor);
                         }x
-x
+
                         resp = duki.next().charAt(0);
                     }
                     break;
@@ -82,8 +82,8 @@ x
                     while (resp2 == 's' || resp2 == 'S') {
                         duki.nextLine();
                         System.out.println("Ingrese cadena: ");
-                        String cadena = duki.nextLine().toLowerCase();
-                        LetrasyNumeros(cadena);
+                        String cad = duki.nextLine().toLowerCase();
+                        LetrasyNumeros(cad);
                         System.out.println("Desea continuar[S/N]?");
                         resp2 = duki.next().charAt(0);
                     }
